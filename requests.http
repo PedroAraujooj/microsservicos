@@ -1,0 +1,40 @@
+@baseUrl = http://localhost:8080
+
+### Criar evento
+POST {{baseUrl}}/api/events
+Content-Type: application/json
+
+{
+  "name": "Spring Boot Experience",
+  "location": "Rio de Janeiro",
+  "date": "2026-09-10",
+  "capacity": 100,
+  "category": "TECH",
+  "metadata": {
+    "speaker": "Infnet",
+    "track": "Microservices"
+  }
+}
+
+### Listar eventos
+GET {{baseUrl}}/api/events
+
+### Consultar evento
+GET {{baseUrl}}/api/events/COLE_O_ID_DO_EVENTO
+
+### Criar reserva
+POST {{baseUrl}}/api/reservations
+Content-Type: application/json
+
+{
+  "eventId": "COLE_O_ID_DO_EVENTO",
+  "customerName": "Aluno Teste",
+  "customerEmail": "aluno@email.com",
+  "quantity": 2
+}
+
+### Listar reservas
+GET {{baseUrl}}/api/reservations
+
+### Testar chamada entre microservices
+GET {{baseUrl}}/api/reservations/events/COLE_O_ID_DO_EVENTO

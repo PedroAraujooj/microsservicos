@@ -1,0 +1,12 @@
+gradle/
+.gradle/
+target/
+out/
+*.class
+*.log
+.idea/
+.vscode/
+*.iml
+
+data/
+docker-data/
